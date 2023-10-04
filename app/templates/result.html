@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Points App - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Two Points App - Results</h1>
+
+    {% if current_location %}
+    <div class="result">
+        <h2>Current location</h2>
+        <p>{{ current_location }}</p>
+        <p>Distance (km): {{ distance_km }} km</p>
+        <p>Distance (miles): {{ distance_miles }} miles</p>
+        <!-- Display other information here -->
+    </div>
+    {% endif %}
+
+    {% if typed_location %}
+    <div class="result">
+        <h2>Typed location</h2>
+        <p>{{ typed_location }}</p>
+        <p>Distance (km): {{ distance_km }} km</p>
+        <p>Distance (miles): {{ distance_miles }} miles</p>
+        <!-- Display other information here -->
+    </div>
+    {% endif %}
+
+    <!-- Add the interactive map here (as previously shown) -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
